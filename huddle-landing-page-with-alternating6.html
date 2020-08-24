@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d63b741f1d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        :root {
+            --main-pink: hsl(322, 100%, 66%);
+            --main-pale-cyan: hsl(193, 100%, 96%);
+            --main-dark-cyan: hsl(192, 100%, 9%);
+            --main-grayish-blue: hsl(208, 11%, 55%);
+            --main-dark-gray: hsl(0, 0%, 66%);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400, 700;
+        }
+        
+        /* hero image that'll cover the entire header section */
+        .hero_image {
+            height: 100vh;
+            background-image: url("bg-hero-desktop.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: var(--main-pale-cyan);
+        }
+        
+        /* top logo */
+        .logo {
+            width: 15%;
+            margin-left: 35px;
+        }
+        
+        .topRightBtn {
+            background: white;
+            outline: none;
+            width: 15%;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            float: right!important;
+            margin-right: 35px;
+        }
+        
+        /* Styling the header's text */
+        .header_text {
+            color: black;
+            margin-top: 100px;
+            margin-left: 20px;
+            width: 80%;
+        }
+        
+        /* mockup image in the header section */
+        .header_mockup_img {
+            margin-right: 30px;
+            margin-top: 35px;
+            width: 100%;
+        }
+        
+        /* Styling the pink button in the header */
+        .btn {
+            outline: none;
+            color: var(--main-pale-cyan );
+            background: var(--main-pink);
+            width: 60%;
+            padding: 12px 40px;
+        }
+        
+        /* Changing the shadow values of w3-card-4 */
+        .w3-card-4 {
+            box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2), 0 1px 15px 0 rgba(0,0,0,0.10);
+            background-color: white; /* if not specified, half the subs card won't appear. */
+        }
+        
+        /*Layout for all cards*/
+        .cards_layout {
+            width: 88%;
+            height: 380px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Grow card */
+        .card_grow {
+            margin:  130px 80px 30px;
+            flex-direction: row-reverse;
+        }
+        
+        /* flow card */
+        .card_flow {
+            margin:  0 80px 30px;
+        }
+        
+        /*users card*/
+        .card_users {
+            margin:  0 80px 130px;
+            flex-direction: row-reverse;
+        }
+         /* All cards text */
+        .cards_text {
+            width: 50%;
+        }
+        
+        /* All cards images */
+        .cards_img {
+            width: 330px;
+            height: 270px;
+        }
+        
+        /* subscription card */
+        .subs_card_cont {
+            width: 55%;
+            height: 230px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -100px;/*very important to adjust */
+        }
+        
+        footer {
+            width: 100%;
+            height: 480px;
+            background-color: var(--main-dark-cyan);
+            color: var(--main-pale-cyan);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: 150px!important;
+            position: absolute; /* along with z-index will make the subs card overlap */
+            z-index: -1;
+        }
+        
+        .footer_logo {
+            width: 20%;
+            margin-left: 25px;
+            background-color: var(--main-grayish-blue);
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        /* width of columns in the footer section */
+        .footer_col_width {
+            width: 20%;
+            margin: 0 20px;
+        }
+        
+        /* screens with 601pxor less: */
+        @media screen and (max-width: 601px){
+            .hero_image {
+                background-image: url(bg-hero-mobile.png);
+                height: auto; /* to accommodate the whole set */
+            }
+    
+            .logo {
+                width: 30%;
+                margin-left: 0;
+            }
+            
+            .topRightBtn {
+                width: 30%;
+                margin-right: 0;
+            }
+            
+            .header_text {
+                text-align: center;
+                width: 100%;
+                margin: 40px 0;
+            }
+            
+            .header_text h1 { /* change size of h1 from 32 to 29px */
+                font-size: 29px;
+            }
+            
+            .header_text p { /* change size of p from 16 to 20px */
+                font-size: 20px;
+            }
+            
+            .btn {
+                width: 80%;
+                margin: 30px 0;
+            }
+            
+            .header_mockup_img {
+                margin: 0 auto 30px;;
+            }
+            
+            .cards_layout {
+                display: block;
+                text-align: center;
+                width: 100%;
+                height: 650px;
+            }
+            
+            .card_grow {
+                margin:  70px 0 40px;
+                text-align: center;
+            }
+            
+            .card_flow {
+                margin: 0 0 40px;
+            }
+            
+            .card_users {
+                margin: 0 0 130px;
+            }
+            
+            .cards_img {
+                margin: 60px 0;
+            }
+            
+            .cards_text {
+                width: 100%;
+            }
+            
+            .cards_text p {
+                font-size: 19px;
+            }
+            
+            .subs_card_cont {
+                display: block;
+                width: 90%;
+            }
+            
+            .subs_card_cont h2 {
+                font-size: 22px;
+                padding-top: 10%;
+            }
+                        
+            footer {
+                height: auto;
+            }
+            
+            .footer_col_width {
+                width: 100%;
+            }
+            
+            .social_icons {
+                margin: 30px 0 60px;
+                text-align: center;
+            }
+            
+            /*change it from previously bottom-right*/
+            .footer_bottom_center {
+                width: 100%;
+                position: absolute;
+                left:50%;
+                bottom:0;
+                text-align: center;
+                transform: translate(-50%,0%);
+                -ms-transform: translate(-50%,0%);
+            }
+            
+            .footer_bottom_center p {
+                padding-bottom: 10px;
+            }
+            
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <header class="hero_image w3-container w3-padding">
+        
+        <!--Top of the page: logo and right button-->
+        <div class="w3-row-padding w3-padding-32">
+            <div>
+                <img class="w3-half logo" src="logo.png" alt="logo">
+            
+                <button class="w3-half w3-button w3-round-xxlarge topRightBtn"><b>Try It Free</b></button>
+            </div>
+        </div>
+        
+        <!--Middle part of the header section-->
+        <!--left half of the header-->
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <div class="w3-container header_text">
+                    <h1>Build The Community Your Fans Will Love </h1>
+                    <p>Huddel re-imagines the way we build communities. You have a voice, but so does youe audience. Create connections with your users  as you engage in genuine discussion.</p>
+                    <button class="w3-button w3-round-xxlarge btn">Get Started for Free</button>
+                </div>
+            </div>
+            
+            <!--right half of the header-->
+            <div class="w3-half w3-center">
+                <img class="header_mockup_img" src="illustration-mockups.png" alt="mockup">
+            </div>
+        </div>
+    </header>
+    <!--End of header section-->
+    
+    <!--Main body with NO hero image-->
+    <main class="w3-container w3-padding">
+        
+        <!--Grow card-->
+        <section class="w3-container w3-card-4 cards_layout card_grow">
+            <img class="cards_img" src="illustration-grow-together.png" alt="grow">
+            <div class="w3-container cards_text">
+                <h3>Grow Together</h3>
+                <p style="color: var(--main-dark-gray);">Generate meaningful discussion with your audience and build a strong, loyal community. Think of the insightful conversations you miss out on with a feeback form.</p>
+            </div>
+        </section>
+        
+        <!--Flow card-->
+        <section class="w3-container w3-card-4 cards_layout card_flow">
+            <img class="cards_img" src="illustration-flowing-conversation.png" alt="flow">
+            <div class="w3-container cards_text" style="margin-right: -20px;">
+                <h3>Flowing Conversations</h3>
+                <p style="color: var(--main-dark-gray);">You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.</p>
+            </div>
+        </section>
+        
+        <!--Users card-->
+        <section class="w3-container w3-card-4 cards_layout card_users">
+            <img class="cards_img" src="illustration-your-users.png" alt="flow">
+            <div class="w3-container cards_text">
+                <h3>Your Users</h3>
+                <p style="color: var(--main-dark-gray);">It takes no time at all to integrate Huddle with your app's authentication solution. This means, once signed in to your app, your users can start chatting immediately.</p>
+            </div>
+        </section>
+    </main>
+    <!--End of main body-->
+    
+    <!--subscription card popup-->
+    <section class="w3-content w3-card-4 subs_card_cont">
+        <div class="w3-container w3-center">
+            <h2>Ready To Build Your Community?</h2>
+            <button class="w3-button w3-round-xxlarge btn" style="padding: 20px 70px;">Get Started for Free</button>
+        </div>
+    </section>
+    <!--End of subscription card-->
+    
+    <!--Footer section-->
+    <footer class="w3-container w3-display-container">
+        
+        <div class="w3-row-padding">
+            
+            <!--footer logo-->
+            <div class="w3-margin-bottom">
+                <img class="footer_logo" src="logo.png" alt="footer_logo">
+            </div>
+            
+            <!--address Column-->
+            <div class="w3-col footer_col_width">
+                <p><i class="fas fa-map-marker-alt w3-margin-right"></i> Lorem ipsum dolor sit amet, ipsum dolor sit amet, 23 ipsum, ipsum dolor sit amet.</p>
+                <p><i class="fas fa-phone-alt w3-margin-right"></i> +96623443254</p>
+                <p><i class="fa fa-envelope w3-margin-right"></i> example@huddle.com</p>
+            </div>
+            
+            <!--About column-->
+            <div class="w3-col footer_col_width">
+                <p><a href="#">About Us</a></p>
+                <p><a href="#">What We Do</a></p>
+                <p><a href="#">FAQ</a></p>
+            </div>
+            
+            <!--Career column-->
+            <div class="w3-col footer_col_width">
+                <p><a href="#">Career</a></p>
+                <p><a href="#">Blog</a></p>
+                <p><a href="#">Contact Us</a></p>
+            </div>
+            
+            <!--Social media column-->
+            <div class="w3-col footer_col_width social_icons">
+                <p>
+                    <a href="#"><i class="fab fa-facebook-f w3-large w3-text-white w3-circle w3-border w3-padding" style="width: 50px;"></i></a>
+                    <a href="#"><i class="fab fa-twitter w3-large w3-text-white w3-circle w3-border w3-padding" style="width: 50px;"></i></a>
+                    <a href="#"><i class="fab fa-instagram w3-large w3-text-white w3-circle w3-border w3-padding" style="width: 50px;"></i></a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="w3-container w3-display-bottomright footer_bottom_center">
+            <p>&copy; Designed By Salahhuddin Web Dev</p>
+        </div>
+    </footer>
+    <!--End of footer-->
+    
+</body>
+</html>
